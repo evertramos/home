@@ -1,3 +1,6 @@
+# Bash Aliases
+alias l='ls -la'
+
 # Git Aliases
 alias gs='git status'
 alias ga='git add'
