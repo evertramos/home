@@ -8,6 +8,8 @@ alias gaa='git add --all'
 alias gc='git commit -m'
 alias gp='git push'
 alias gpp='git pull'
+alias gb='git branch'
+alias gk='git checkout'
 
 # Laravel
 alias a='php artisan'
