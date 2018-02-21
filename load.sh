@@ -5,9 +5,12 @@ SCRIPT_PATH="$(dirname "$(readlink -f "$0")" )"
 
 if [ -e $SCRIPT_PATH/.env ]; then
     source $SCRIPT_PATH/.env
-    
-    # Go to WorkDirectory
-    echo "alias go='cd $WORK_DIRECTORY'" >> $SCRIPT_PATH/.bash_aliases
+
+    if [ ! -z ${WORK_DIRECTORY+X} ]; then
+
+       # Go to WorkDirectory
+        echo "alias go='cd $WORK_DIRECTORY'" >> $SCRIPT_PATH/.bash_aliases
+    fi    
 fi
 
 DATA=`date '+%Y-%m-%d_%H-%M-%S'`
