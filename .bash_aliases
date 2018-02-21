@@ -36,8 +36,10 @@ if [ -d "$HOME/.composer/vendor/bin" ] ; then
 fi
 
 # Get Current server Environmet Settings
-if [ -e .evn ]; then
-    source .evn
+SCRIPT_PATH="$(dirname "$(readlink -f "$0")" )"
+
+if [ -e $SCRIPT_PATH/.env ]; then
+    source $SCRIPT_PATH/.env
     
     # Go to WorkDirectory
     alias go='cd $WORK_DIRECTORY'
