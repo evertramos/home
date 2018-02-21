@@ -23,6 +23,7 @@ alias de='docker exec'
 alias di='docker images'
 alias dv='docker volume'
 alias dn='docker network'
+alias dlo='docker logs'
 
 # Docker Compose
 alias dc='docker-compose'
@@ -38,13 +39,5 @@ if [ -d "$HOME/.composer/vendor/bin" ] ; then
     PATH="$HOME/.composer/vendor/bin:$PATH"
 fi
 
-# Get Current server Environmet Settings
-SCRIPT_PATH="$(dirname "$(readlink -f "$0")" )"
 
-if [ -e $SCRIPT_PATH/.env ]; then
-    source $SCRIPT_PATH/.env
-    
-    # Go to WorkDirectory
-    alias go='cd $WORK_DIRECTORY'
-fi
-
+alias go='cd /home/evert/sites/excelplay.com.br'

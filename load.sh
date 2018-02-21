@@ -1,5 +1,15 @@
 #!/bin/bash
 
+# Get Current server Environmet Settings
+SCRIPT_PATH="$(dirname "$(readlink -f "$0")" )"
+
+if [ -e $SCRIPT_PATH/.env ]; then
+    source $SCRIPT_PATH/.env
+    
+    # Go to WorkDirectory
+    echo "alias go='cd $WORK_DIRECTORY'" >> $SCRIPT_PATH/.bash_aliases
+fi
+
 DATA=`date '+%Y-%m-%d_%H-%M-%S'`
 
 #
@@ -24,9 +34,6 @@ fi
 
 # Create symlink for new bash aliases
 ln -s $HOME/home/$ALIAS $HOME/$ALIAS
-
-
-
 
 # Exit without errors
 exit 0
