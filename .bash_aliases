@@ -20,7 +20,6 @@ alias dl='docker ps'
 alias dla='docker ps -a'
 alias dr='docker run'
 alias de='docker exec'
-alias dc='docker compose'
 alias di='docker images'
 alias dv='docker volume'
 alias dn='docker network'
@@ -34,5 +33,13 @@ alias dcdv='docker-compose down --volume'
 # Composer Aliases
 if [ -d "$HOME/.composer/vendor/bin" ] ; then
     PATH="$HOME/.composer/vendor/bin:$PATH"
+fi
+
+# Get Current server Environmet Settings
+if [ -e .evn ]; then
+    source .evn
+    
+    # Go to WorkDirectory
+    alias go='cd $WORK_DIRECTORY'
 fi
 
