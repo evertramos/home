@@ -30,6 +30,9 @@ alias dcu='docker-compose up -d'
 alias dcd='docker-compose down'
 alias dcdv='docker-compose down --volume'
 
+# Docker-Composer wp-cli
+alias wp="docker-compose run --rm wpcli"
+
 # Composer Aliases
 if [ -d "$HOME/.composer/vendor/bin" ] ; then
     PATH="$HOME/.composer/vendor/bin:$PATH"
