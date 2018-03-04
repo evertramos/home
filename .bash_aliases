@@ -1,3 +1,6 @@
+# Go To Work Dir
+#alias go='cd /your/work/dir/'
+
 # Bash Aliases
 alias l='ls -la'
 
