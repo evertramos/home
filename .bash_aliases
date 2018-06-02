@@ -43,3 +43,5 @@ if [ -d "$HOME/.composer/vendor/bin" ] ; then
 fi
 
 
+alias go='cd /home/evert/sites/excelplay.com.br'
+alias go='cd /home/evert/sites/excelplay.com.br'

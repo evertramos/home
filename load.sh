@@ -3,40 +3,40 @@
 # Get Current server Environmet Settings
 SCRIPT_PATH="$(dirname "$(readlink -f "$0")" )"
 
-if [ -e $SCRIPT_PATH/.env ]; then
-    source $SCRIPT_PATH/.env
+if [ -e "$SCRIPT_PATH""/.env" ]; then
+    source "$SCRIPT_PATH""/.env"
 
     if [ ! -z ${WORK_DIRECTORY+X} ]; then
 
        # Go to WorkDirectory
-        echo "alias go='cd $WORK_DIRECTORY'" >> $SCRIPT_PATH/.bash_aliases
+        echo "alias go='cd "$WORK_DIRECTORY"'" >> "$SCRIPT_PATH""/.bash_aliases"
     fi    
 fi
 
-DATA=`date '+%Y-%m-%d_%H-%M-%S'`
+DATA="$(date '+%Y-%m-%d_%H-%M-%S')"
 
 #
 # Load aliases
 #
 
 # Set aliases name
-ALIAS=.bash_aliases
+ALIAS=".bash_aliases"
 
-# Check if symlink exists and remove ir
-if [ -L $HOME/$ALIAS ]; then
-    rm $HOME/$ALIAS
+# Check if symlink exists and remove it
+if [ -L "$HOME""/""$ALIAS" ]; then
+    rm "$HOME""/""$ALIAS"
 fi
 
 # Check file exists and rename it
-if [ -e $HOME/$ALIAS ]; then
-    if [ -e $HOME/$ALIAS.$DATA ]; then
-        rm $HOME/$ALIAS.$DATA
+if [ -e "$HOME""/""$ALIAS" ]; then
+    if [ -e "$HOME""/""$ALIAS"".""$DATA" ]; then
+        rm "$HOME""/""$ALIAS"".""$DATA"
     fi
-    mv $HOME/$ALIAS $HOME/$ALIAS.$DATA
+    mv "$HOME""/""$ALIAS"" ""$HOME""/""$ALIAS"".""$DATA"
 fi
 
 # Create symlink for new bash aliases
-ln -s $HOME/home/$ALIAS $HOME/$ALIAS
+ln -s "$HOME""/home/""$ALIAS"" ""$HOME""/""$ALIAS"
 
 # Exit without errors
 exit 0
