@@ -9,35 +9,40 @@ if [ -e "$SCRIPT_PATH""/.env" ]; then
     if [ ! -z ${WORK_DIRECTORY+X} ]; then
 
        # Go to WorkDirectory
-        echo "alias go='cd "$WORK_DIRECTORY"'" >> "$SCRIPT_PATH""/.bash_aliases"
+        /bin/bash remove_work_dir.sh
+        echo "Adding workdir alias!"
+        echo "alias go='cd "$WORK_DIRECTORY"'" >> "$SCRIPT_PATH""/.bash_aliases" " # WORKDIR"
     fi    
 fi
 
 DATA="$(date '+%Y-%m-%d_%H-%M-%S')"
 
 #
-# Load aliases
+# Function to Load the SymLink
 #
+loadsymlink() {
 
-# Set aliases name
-ALIAS=".bash_aliases"
-
-# Check if symlink exists and remove it
-if [ -L "$HOME""/""$ALIAS" ]; then
-    rm "$HOME""/""$ALIAS"
-fi
-
-# Check file exists and rename it
-if [ -e "$HOME""/""$ALIAS" ]; then
-    if [ -e "$HOME""/""$ALIAS"".""$DATA" ]; then
-        rm "$HOME""/""$ALIAS"".""$DATA"
+    # Check if symlink exists and remove it
+    if [ -L "$HOME""/""$1" ]; then
+        rm "$HOME""/""$1"
     fi
-    mv "$HOME""/""$ALIAS"" ""$HOME""/""$ALIAS"".""$DATA"
-fi
 
-# Create symlink for new bash aliases
-ln -s "$HOME""/home/""$ALIAS"" ""$HOME""/""$ALIAS"
+    # Check file exists and rename it
+    if [ -e "$HOME""/""$1" ]; then
+        if [ -e "$HOME""/""$1"".""$DATA" ]; then
+            rm "$HOME""/""$1"".""$DATA"
+        fi
+        mv $HOME/$1 $HOME/$1.$DATA
+    fi
 
-# Exit without errors
+    # Create symlink for new bash aliases
+    ln -s $HOME/home/$1 $HOME/$1
+}
+
+# Load aliases
+loadsymlink ".bash_aliases"
+
+# Load vimrc
+loadsymlink ".vimrc"
+
 exit 0
-

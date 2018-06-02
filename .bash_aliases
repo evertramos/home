@@ -1,5 +1,8 @@
-# Go To Work Dir
-#alias go='cd /your/work/dir/'
+# ---------------------------------------------------------------------
+#
+# Basic Aliases
+# 
+# ---------------------------------------------------------------------
 
 # Bash Aliases
 alias l='ls -la'
@@ -42,6 +45,3 @@ if [ -d "$HOME/.composer/vendor/bin" ] ; then
     PATH="$HOME/.composer/vendor/bin:$PATH"
 fi
 
-
-alias go='cd /home/evert/sites/excelplay.com.br'
-alias go='cd /home/evert/sites/excelplay.com.br'
