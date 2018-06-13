@@ -42,7 +42,11 @@ loadsymlink() {
 # Load aliases
 loadsymlink ".bash_aliases"
 
+echo "Remember to reload your current bash"
+
 # Load vimrc
 loadsymlink ".vimrc"
+
+
 
 exit 0

@@ -6,6 +6,7 @@
 
 # Bash Aliases
 alias l='ls -la'
+alias df='df -h'
 
 # Git Aliases
 alias gs='git status'
