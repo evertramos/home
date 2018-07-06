@@ -7,6 +7,7 @@
 # Bash Aliases
 alias l='ls -la'
 alias df='df -h'
+alias apt-get='sudo apt-get'
 
 # Git Aliases
 alias gs='git status'
@@ -46,3 +47,9 @@ if [ -d "$HOME/.composer/vendor/bin" ] ; then
     PATH="$HOME/.composer/vendor/bin:$PATH"
 fi
 
+# Kubernetes
+alias k='kubectl'
+alias kg='kubectl get'
+
+# Other Aliases
+alias go='cd /your/work/directory'  # WORKDIR
