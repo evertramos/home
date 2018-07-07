@@ -50,6 +50,11 @@ fi
 # Kubernetes
 alias k='kubectl'
 alias kg='kubectl get'
+alias kgp='kubectl get pods'
+alias kga='kubectl get pods --all-namespaces'
+alias kgs='kubectl get service'
+alias kgn='kubectl get nodes'
+
 
 # Other Aliases
 alias go='cd /your/work/directory'  # WORKDIR
