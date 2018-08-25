@@ -32,6 +32,12 @@ alias dv='docker volume'
 alias dn='docker network'
 alias dlo='docker logs'
 
+# Docker Swarm
+alias dn='docker node'
+alias dnl='docker node ls'
+alias ds='docker service'
+alias dsl='docker service ls'
+
 # Docker Compose
 alias dc='docker-compose'
 alias dcu='docker-compose up -d'
