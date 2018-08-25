@@ -31,13 +31,15 @@ alias de='docker exec'
 alias di='docker images'
 alias dv='docker volume'
 alias dn='docker network'
+alias dln='docker network ls'
+alias din='docker network inspect'
 alias dlo='docker logs'
 
 # Docker Swarm
-alias dn='docker node'
-alias dnl='docker node ls'
-alias ds='docker service'
-alias dsl='docker service ls'
+alias dnode='docker node'
+alias dlnode='docker node ls'
+alias ddserv='docker service'
+alias dlserv='docker service ls'
 
 # Docker Compose
 alias dc='docker-compose'
