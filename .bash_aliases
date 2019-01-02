@@ -63,6 +63,3 @@ alias kga='kubectl get pods --all-namespaces'
 alias kgs='kubectl get service'
 alias kgn='kubectl get nodes'
 
-
-# Other Aliases
-alias go='cd /your/work/directory'  # WORKDIR
