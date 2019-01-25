@@ -11,7 +11,7 @@ if [ -e "$SCRIPT_PATH""/.env" ]; then
        # Go to WorkDirectory
         /bin/bash remove_work_dir.sh
         echo "Adding workdir alias!"
-        echo "alias go='cd "$WORK_DIRECTORY"'" >> "$SCRIPT_PATH""/.bash_aliases" " # WORKDIR"
+        echo "alias gg='cd "$WORK_DIRECTORY"'" >> "$SCRIPT_PATH""/.bash_aliases" " # WORKDIR"
     fi    
 fi
 

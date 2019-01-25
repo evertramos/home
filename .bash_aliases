@@ -65,4 +65,4 @@ alias kgn='kubectl get nodes'
 
 
 # Other Aliases
-alias go='cd /your/work/directory'  # WORKDIR
+alias gg='cd /your/work/directory'  # WORKDIR
